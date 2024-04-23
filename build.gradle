@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    // https://mvnrepository.com/artifact/io.freefair.gradle/lombok-plugin
+    id "io.freefair.lombok" version "6.6.1"
+
+}
+
+group = 'ru.netology'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = 11
+// кодировка файлов (если используете русский язык в файлах)
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation 'mysql:mysql-connector-java:8.0.30'
+// https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+// https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils
+    implementation 'commons-dbutils:commons-dbutils:1.7'
+// https://mvnrepository.com/artifact/com.codeborne/selenide
+    implementation 'com.codeborne:selenide:6.17.2'
+
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'db.url' , System.getProperty ('db.url', "jdbc:mysql://localhost:3306/app")
+}
