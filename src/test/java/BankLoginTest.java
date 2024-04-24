@@ -10,7 +10,6 @@ import page.LoginPage;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.open;
 import static data.SQLHelper.cleanAuthCodes;
