@@ -11,7 +11,7 @@ public class LoginPage {
     private final SelenideElement loginField = $ ("[data-test-id=login] input");
     private final SelenideElement passwordField = $ ("[data-test-id=password] input");
     private final SelenideElement loginButton = $ ("[data-test-id=action-login]");
-    private final SelenideElement errorNotification = $ ("[data-test-id= 'error-notification] .notification__content");
+    private final SelenideElement errorNotification = $ ("[data-test-id='error-notification'] .notification__content");
 
     public void verifyErrorNotification (String expectedText){
         errorNotification.shouldHave(exactText(expectedText)).shouldBe(visible);

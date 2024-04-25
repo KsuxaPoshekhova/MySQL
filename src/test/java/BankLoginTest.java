@@ -1,10 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import data.DataHelper;
 import data.SQLHelper;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import page.LoginPage;
 
@@ -22,7 +19,7 @@ public class BankLoginTest {
     void tearDown(){
         cleanAuthCodes();
     }
-    @AfterEach
+    @AfterAll
     static void tearDownAll(){
         cleanDatabase();
     }
@@ -62,6 +59,6 @@ public class BankLoginTest {
         verificationPage.verifyVerificationPageVisiblity();
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! Неверно указан логин или пароль");
+        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте ещё раз.");
     }
 }
