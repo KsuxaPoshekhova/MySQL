@@ -15,6 +15,7 @@ public class VerificationPage {
     private final SelenideElement errorNotification = $ ("[data-test-id='error-notification'] .notification__content");
 
     public void verifyVerificationPageVisiblity() {
+
         codeField.shouldBe(visible);
     }
     public void verifyErrorNotification(String expectedText) {

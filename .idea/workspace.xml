@@ -28,11 +28,10 @@
       <change beforePath="$PROJECT_DIR$/../Gradl/settings.gradle.kts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Gradl/src/main/java/ru/netology/service/CashbackHackService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Gradl/src/test/java/ru/netology/service/CashbackHackServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BankLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BankLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/page/VerificationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/VerificationPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

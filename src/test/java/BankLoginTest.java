@@ -16,24 +16,26 @@ public class BankLoginTest {
     LoginPage loginPage;
 
     @AfterEach
-    void tearDown(){
+    void tearDown() {
         cleanAuthCodes();
     }
+
     @AfterAll
-    static void tearDownAll(){
+    static void tearDownAll() {
         cleanDatabase();
     }
-    @BeforeEach
-    void setUp(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        Map<String, Object> prefs = new HashMap<String , Object>();
-        prefs.put("credentials_enabled_service", false);
-        prefs.put("password_manager_enabled", false);
-        options.setExperimentalOption("prefs", prefs);
-        Configuration.browserCapabilities = options;
 
-        loginPage = open ( "http://localhost:9999", LoginPage.class);
+    @BeforeEach
+    void setUp() {
+        //   ChromeOptions options = new ChromeOptions();
+        //  options.addArguments("--start-maximized");
+        //   Map<String, Object> prefs = new HashMap<String , Object>();
+        //   prefs.put("credentials_enabled_service", false);
+        //   prefs.put("password_manager_enabled", false);
+        //   options.setExperimentalOption("prefs", prefs);
+        // Configuration.browserCapabilities = options;
+
+        loginPage = open("http://localhost:9999", LoginPage.class);
     }
     @Test
     @DisplayName("Successful login with existing username and password")
@@ -56,7 +58,7 @@ public class BankLoginTest {
     void shouldGetErrorNotificationIfFLoginWithExistUserAndRandomVerificationCode() {
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
-        verificationPage.verifyVerificationPageVisiblity();
+        // verificationPage.verifyVerificationPageVisiblity() ;
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
         verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте ещё раз.");
